@@ -1,0 +1,30 @@
+<nav class="navbar navbar-inverse" style="border-radius: 0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Marvel Character Seach</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="/#!/about">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 style="text-align: center;">Search for a Marvel Character!</h1>
+  <div style="width: 60%; margin: 30px auto;">
+      <form ng-submit="characterSearch(searchString)">
+          <input class="form-control" ng-model="searchString" type="text" name="name" placeholder="name">
+          <input type="submit" class="btn btn-primary btn-large btn-default btn-block">
+      </form>
+  </div>
+  <div ng-repeat="result in searchResults">
+    <div ng-click="goToAbout(result)">{{result.name}}</div>
+</div>

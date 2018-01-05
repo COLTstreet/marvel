@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+}
+
+.bg {
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}
