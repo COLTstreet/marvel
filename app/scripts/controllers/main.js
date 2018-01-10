@@ -34,7 +34,7 @@ angular.module('marvelApp')
           })
           .done(function (data) {
               if(data.data.results[0].length === 1){
-                let background = "url(" +  data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension + ")";
+                var background = "url(" +  data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension + ")";
                 $('.bg').css('background-image', background);
                 window.location.replace('/#!/about');
               } else if(data.data.results.length > 1){
@@ -52,7 +52,7 @@ angular.module('marvelApp')
 
       function goToAbout(result){
         $scope.selectedResult = result;
-        let background = "url(" +  result.thumbnail.path + "." + result.thumbnail.extension + ")";
+        var background = "url(" +  result.thumbnail.path + "." + result.thumbnail.extension + ")";
         $('.hero').css('background-image', background);
         
         // window.location.replace('/#!/about');
