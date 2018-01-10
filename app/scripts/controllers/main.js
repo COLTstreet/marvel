@@ -12,6 +12,8 @@ angular.module('marvelApp')
       //Variables
       $scope.PRIV_KEY = "9913454860da8841daa86b9fa485eaaef8a5991a";
       $scope.PUBLIC_KEY = "7ca9c95a6ecf52f4b20a011c3c4117f8";
+      $scope.selectedResult = '';
+      $scope.background = '';
 
       //Functions
       $scope.characterSearch = characterSearch;
@@ -31,7 +33,7 @@ angular.module('marvelApp')
               hash: hash
           })
           .done(function (data) {
-              if(data.data.results[0].length == 1){
+              if(data.data.results[0].length === 1){
                 let background = "url(" +  data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension + ")";
                 $('.bg').css('background-image', background);
                 window.location.replace('/#!/about');
@@ -49,13 +51,19 @@ angular.module('marvelApp')
       };
 
       function goToAbout(result){
+        $scope.selectedResult = result;
         let background = "url(" +  result.thumbnail.path + "." + result.thumbnail.extension + ")";
-        $('.bg').css('background-image', background);
-        window.location.replace('/#!/about');
+        $('.hero').css('background-image', background);
+        
+        // window.location.replace('/#!/about');
       }
 
       function init() {
-        $('.bg').css('background-image', "");
+        $('.hamb-wrap').on('click', function(){
+          $(this).parent().children('p').toggle();
+          $(this).children().toggleClass('active');
+          $('nav').fadeToggle(200);
+        });
       }
 
       init();
