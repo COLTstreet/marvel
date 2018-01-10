@@ -25,7 +25,7 @@ angular.module('marvelApp')
           // you need a new ts every request                                                                                    
           var ts = new Date().getTime();
           var hash = CryptoJS.MD5(ts + $scope.PRIV_KEY + $scope.PUBLIC_KEY).toString();                                                                   
-          var url = 'https://gateway.marvel.com:80/v1/public/characters';
+          var url = 'https://gateway.marvel.com/v1/public/characters';
           $.getJSON(url, {
               nameStartsWith: searchString,
               ts: ts,
