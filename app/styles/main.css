@@ -20,7 +20,6 @@ h1 {
   color: #fff;
   margin-bottom: .3em;
   margin-top: 0;
-  padding-top: 20px;
 }
 
 p {
@@ -132,6 +131,14 @@ p {
   font-family: 'Permanent Marker';
   font-size: 4em;
   color: #000;
+  -webkit-transition: color .75s ease-out;
+  -moz-transition: color .75s ease-out;
+  -o-transition: color .75s ease-out;
+  transition: color .75s ease-out;
+}
+
+.hero-name:hover {
+  color: #518cca;
 }
 
 .search-top {
@@ -180,6 +187,15 @@ p {
 .result-content {
   background: #EEE;
   padding-top: 1em;
+}
+
+.result-title a {
+  color: black;
+}
+
+.result-title a:hover {
+  color: #518cca;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {

@@ -12,13 +12,14 @@ angular.module('marvelApp')
       //Variables
       $scope.PRIV_KEY = "9913454860da8841daa86b9fa485eaaef8a5991a";
       $scope.PUBLIC_KEY = "7ca9c95a6ecf52f4b20a011c3c4117f8";
+      $scope.key = "ef125a4927c7215d28cb0e93ffdc5deb506ff9ec";
       $scope.selectedResult = '';
       $scope.background = '';
 
       //Functions
       $scope.characterSearch = characterSearch;
       $scope.init = init;
-      $scope.goToAbout = goToAbout;
+      $scope.selectHero = selectHero;
 
       function characterSearch(searchString) {
 
@@ -48,9 +49,24 @@ angular.module('marvelApp')
           .fail(function (err) {
               console.log(err);
           });
+
+          //TRYING COMIC VINE API
+          $.ajax("https://comicvine.gamespot.com/api/characters", {
+              type: "GET",
+              filter: "name:" + searchString,
+              api_key: $scope.key,
+              format: "json"
+          })
+          .done(function (data) {
+              console.log(data);
+          })
+          .fail(function (err) {
+              console.log(err);
+          });
       };
 
-      function goToAbout(result){
+      function selectHero(result){
+        console.log(result);
         $scope.selectedResult = result;
         var background = "url(" +  result.thumbnail.path + "." + result.thumbnail.extension + ")";
         $('.hero').css('background-image', background);
