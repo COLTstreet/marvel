@@ -22,17 +22,19 @@
     <h1 style="text-align: center;">Search for a Comic Character!</h1>
     <div>
         <form ng-submit="characterSearch(searchString)">
-            <input type="submit" class="btn btn-dark btn-large btn-default btn-block search-btn">
+            <!-- <input type="submit" class="btn btn-dark btn-large btn-default btn-block search-btn"> -->
+            <md-button type="submit" class="md-raised md-primary search-btn">Primary</md-button>
             <input class="form-control search-input" ng-model="searchString" type="text" name="name" placeholder="name">
         </form>
     </div>
     <div class="search-results">
-    <div ng-repeat="result in searchResults">
-      <div ng-click="selectHero(result)">
-        <img class="search-thumb" title="{{result.name}}" data-toggle="tooltip" ng-src="{{result.image.icon_url}}"></div>
-    </div>
+      <div ng-repeat="result in searchResults">
+        <div ng-click="selectHero(result)">
+          <img class="search-thumb" title="{{result.name}}" data-toggle="tooltip" ng-src="{{result.image.icon_url}}"></div>
+      </div>
     </div>
   </div>
+  <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
   <div class="result-content left-right">
     <div class="result-title" ng-if="selectedResult">
       <a href="{{selectedResult.site_detail_url}}" target="_blank" title="Details"><h1 class="hero-name">{{selectedResult.name}}</h1></a>

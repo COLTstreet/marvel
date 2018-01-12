@@ -147,10 +147,16 @@ p {
 
 .search-input {
   width: 80%;
+  height: 36px;
+  border-radius: 0;
 }
 
 .search-btn {
   width: 20% !important;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
   float: right;
   color: #fff;
   background-color: #518cca;
@@ -167,8 +173,11 @@ p {
 .search-thumb{
   width: 75px;
   height: 75px;
-  padding: 0 1px;
   float: right;
+}
+
+.search-thumb:hover {
+  border: 5px solid #3f51b5;
 }
 
 .content {

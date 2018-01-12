@@ -27,6 +27,7 @@ angular.module('marvelApp')
           var ts = new Date().getTime();
           var hash = CryptoJS.MD5(ts + $scope.PRIV_KEY + $scope.PUBLIC_KEY).toString();                                                                   
           var url = 'https://api-comic-vine.herokuapp.com/characters';
+          $scope.searching = true;
           $.getJSON(url, {
               type: "GET",
               filter: "name:" + searchString,
@@ -36,6 +37,7 @@ angular.module('marvelApp')
           .done(function (data) {
               if(data.results.length > 1){
                 $scope.searchResults = data.results;
+                $scope.searching = false;
               } else {
                 console.log("No Results");
               }
