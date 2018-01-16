@@ -9,6 +9,7 @@ html {
 
 html, body {
   height: 100%;
+  background: #212121;
 }
 
 h1 {
@@ -24,7 +25,6 @@ h1 {
 
 p {
   font-weight: 200;
-  color: #525252;
 }
 
 .fl {
@@ -41,7 +41,7 @@ p {
   width: 50%;
   height: 100%;
   position: fixed;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%), url(/images/marvel.jpg);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%), url(/images/comics3.jpg);
   background-size: cover;
   background-position: center 30%;
 }
@@ -130,7 +130,7 @@ p {
 .hero-name {
   font-family: 'Permanent Marker';
   font-size: 4em;
-  color: #000;
+  color: #FAFAFA;
   -webkit-transition: color .75s ease-out;
   -moz-transition: color .75s ease-out;
   -o-transition: color .75s ease-out;
@@ -138,7 +138,7 @@ p {
 }
 
 .hero-name:hover {
-  color: #518cca;
+  color: #009688;
 }
 
 .search-top {
@@ -153,6 +153,7 @@ p {
 
 .search-btn {
   width: 20% !important;
+  min-width: 20%;
   height: 36px;
   padding: 0;
   margin: 0;
@@ -176,8 +177,15 @@ p {
   float: right;
 }
 
+publisher {
+  width: 200px;
+  height: 200px;
+  float: left;
+  background: url(/images/dc.png);
+}
+
 .search-thumb:hover {
-  border: 5px solid #3f51b5;
+  border: 3px solid #00E676;
 }
 
 .content {
@@ -186,6 +194,7 @@ p {
   margin-left: 50%;
   padding: 4em 0em;
   padding-top: 0;
+  padding-bottom: 0;
   overflow: hidden;
 }
 
@@ -194,17 +203,49 @@ p {
 }
 
 .result-content {
-  background: #EEE;
+  background: #212121;
   padding-top: 1em;
+  color: #FAFAFA;
 }
 
 .result-title a {
-  color: black;
+  color: #FAFAFA;
 }
 
 .result-title a:hover {
-  color: #518cca;
+  color: #3F51B5;
   text-decoration: none;
+}
+
+.result-deck {
+  background: rgba(0, 150, 136, .4);
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.result-deck p {
+  padding: 5px;
+}
+
+.result-publisher {
+  width: 100px;
+  float: left;
+  padding: 5px;
+  margin-right: 20px;
+  background: white;
+}
+
+.stat-table {
+  width: 100%;
+}
+
+.footer {
+  height: 50px;
+  background: #FAFAFA;
+  color: #212121;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

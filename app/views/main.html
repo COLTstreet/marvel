@@ -23,24 +23,46 @@
     <div>
         <form ng-submit="characterSearch(searchString)">
             <!-- <input type="submit" class="btn btn-dark btn-large btn-default btn-block search-btn"> -->
-            <md-button type="submit" class="md-raised md-primary search-btn">Primary</md-button>
+            <md-button type="submit" class="md-raised md-primary search-btn">Submit</md-button>
             <input class="form-control search-input" ng-model="searchString" type="text" name="name" placeholder="name">
         </form>
     </div>
     <div class="search-results">
       <div ng-repeat="result in searchResults">
         <div ng-click="selectHero(result)">
-          <img class="search-thumb" title="{{result.name}}" data-toggle="tooltip" ng-src="{{result.image.icon_url}}"></div>
+          <img class="search-thumb hvr-float" title="{{result.name}}" data-toggle="tooltip" ng-src="{{result.image.icon_url}}"></div>
       </div>
     </div>
   </div>
   <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
-  <div class="result-content left-right">
-    <div class="result-title" ng-if="selectedResult">
+  <div class="result-content left-right" ng-show="selectedResult">
+    <div class="result-title">
       <a href="{{selectedResult.site_detail_url}}" target="_blank" title="Details"><h1 class="hero-name">{{selectedResult.name}}</h1></a>
     </div>
-    <p>{{selectedResult.deck}}</p>
+    <div>
+      <table class="stat-table">
+        <tr>
+          <td>
+              <p>Real Name: {{selectedResult.real_name}}</p>
+              <p>Birth: {{selectedResult.birth}}</p>
+          </td>
+          <td>
+              <p>Appearances: {{selectedResult.count_of_issue_appearances}}</p>
+              <p>Gender: {{selectedResult.gender}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="result-deck">
+        <img class="result-publisher" src="{{publisher}}">
+        <p>{{selectedResult.deck}}</p>
+    </div>
     <div id="current-event"></div>
+  </div>
+  <div class="footer">
+    <div>
+      All data is provide by the <a href="https://www.comicvine.com" target="_blank">Comic Vine API</a>
+    </div>
   </div>
 </section>
 

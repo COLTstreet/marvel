@@ -35,27 +35,48 @@ angular.module('marvelApp')
               format: "json"
           })
           .done(function (data) {
-              if(data.results.length > 1){
+              if(data.results.length > 0){
                 $scope.searchResults = data.results;
-                $scope.searching = false;
               } else {
                 console.log("No Results");
               }
 
+              $scope.searching = false;
               $scope.$apply();
           })
           .fail(function (err) {
               console.log(err);
+              $scope.searching = false;
           });
       };
 
       function selectHero(result){
         $scope.selectedResult = result;
+        console.log($scope.selectedResult);
         var background = "url(" +  result.image.super_url + ")";
         $('.hero').css('background-image', background);
         
         $("#current-event").empty();
         $("#current-event").append(result.description);
+
+        //Set publisher logo
+        if(result.publisher.name == "Marvel"){
+          $scope.publisher = "/images/marvel-logo.jpg";
+        } else if (result.publisher.name == "DC Comics") {
+          $scope.publisher = "/images/dc.png";
+        } else {
+          $scope.publisher = "/images/not-avail.svg";
+        }
+        
+
+        //Prettify gender
+        if(!isNaN(result.gender)){
+          if(result.gender === 0 || result.gender === 2){
+            $scope.selectedResult.gender = "Female";
+          } else {
+            $scope.selectedResult.gender = "Male";
+          }
+        }
       }
 
       function init() {
