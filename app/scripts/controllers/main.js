@@ -50,6 +50,20 @@ angular.module('marvelApp')
           });
       };
 
+      function getColor(){
+        var img = new Image(100,100);
+        var url = $("#hero")[0].style.backgroundImage;
+        url = url.slice(5);
+        url = url.slice(0, -2);
+        img.setAttribute('src', url);
+        img.crossOrigin = 'anonymous';
+        img.addEventListener('load', function() {
+          var vibrant = new Vibrant(img);
+          var swatches = vibrant.swatches();
+          $(".result-content").css("background", "linear-gradient(to right, #E2E2E2, " + swatches.LightVibrant.getHex() + ")");
+        });
+      }
+
       function selectHero(result){
         $scope.selectedResult = result;
         console.log($scope.selectedResult);
@@ -67,6 +81,8 @@ angular.module('marvelApp')
         } else {
           $scope.publisher = "/images/not-avail.svg";
         }
+
+        getColor();
         
 
         //Prettify gender

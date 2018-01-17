@@ -130,7 +130,7 @@ p {
 .hero-name {
   font-family: 'Permanent Marker';
   font-size: 4em;
-  color: #FAFAFA;
+  color: #212121;
   -webkit-transition: color .75s ease-out;
   -moz-transition: color .75s ease-out;
   -o-transition: color .75s ease-out;
@@ -185,7 +185,7 @@ publisher {
 }
 
 .search-thumb:hover {
-  border: 3px solid #00E676;
+  border: 2px solid #009688;
 }
 
 .content {
@@ -203,13 +203,13 @@ publisher {
 }
 
 .result-content {
-  background: #212121;
+  background: #FAFAFA;
   padding-top: 1em;
-  color: #FAFAFA;
+  color: #212121;
 }
 
 .result-title a {
-  color: #FAFAFA;
+  color: #212121;
 }
 
 .result-title a:hover {
@@ -218,7 +218,8 @@ publisher {
 }
 
 .result-deck {
-  background: rgba(0, 150, 136, .4);
+  background: rgba(33, 33, 33, .7);
+  color: #FAFAFA;
   border-radius: 10px;
   display: inline-block;
   position: relative;
@@ -243,8 +244,9 @@ publisher {
 
 .footer {
   height: 50px;
-  background: #FAFAFA;
-  color: #212121;
+  border-top: 1px solid #FAFAFA;
+  padding-top: 10px;
+  color: #FAFAFA;
   text-align: center;
 }
 
