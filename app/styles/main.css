@@ -213,14 +213,16 @@ publisher {
   clip-path: polygon(0 10px, 100% 0, 95% calc(100% - 10px), 0 100%);
   margin-bottom: 10px;
   padding: 10px;
+  background: #009688;
 }
-
 .stat-table {
   width: 100%;
 }
 
 .current-event {
   clip-path: polygon(0 0, 100% 20px, 100% calc(100% - 10px), 0px 100%);
+  background: linear-gradient(to right, #E2E2E2, #b39ddb);
+  background: -webkit-linear-gradient(to right, #E2E2E2, #b39ddb);
   padding: 20px;
   margin-top: 5px;
 }
@@ -290,15 +292,6 @@ publisher {
     padding-top: 0;
     width: 100%;
     border: none;
-  }
-
-  .stat-div {
-    background: #009688;
-  }
-
-  .current-event {
-    background: linear-gradient(to right, #E2E2E2, #b39ddb);
-    background: -webkit-linear-gradient(to right, #E2E2E2, #b39ddb);
   }
 }
 @media (max-width: 480px) {
