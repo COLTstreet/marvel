@@ -142,9 +142,13 @@ p {
 }
 
 .search-top {
-  background: url(/images/search.png);
-  background-size: cover;
+  /* background: url(/images/search.png); */
+  /* background-size: cover; */
   padding: 1em;
+  background: -webkit-linear-gradient(40deg, #009688 20%, #673AB7 20%);
+  background: -o-linear-gradient(40deg, #009688 20%, #673AB7 20%);
+  background: -moz-linear-gradient(40deg, #009688 20%, #673AB7 20%);
+  background: linear-gradient(40deg, #009688 20%, #673AB7 20%);
 }
 
 .search-input {
@@ -207,10 +211,12 @@ publisher {
 
 .stat-div {
   clip-path: polygon(0 10px, 100% 0, 95% calc(100% - 10px), 0 100%);
-  background: url(/images/mid.png);
-  background-size: cover;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+.stat-table {
+  width: 100%;
 }
 
 .current-event {
@@ -254,15 +260,11 @@ publisher {
   background: #FAFAFA;
 }
 
-.stat-table {
-  width: 100%;
-}
-
 .footer {
   height: 50px;
   border-top: 1px solid #FAFAFA;
   padding-top: 10px;
-  color: #FAFAFA;
+  color: #212121;
   text-align: center;
 }
 
@@ -277,6 +279,7 @@ publisher {
     display: block;
     position: relative;
     padding: 1px;
+    clip-path: none;
   }
   .hero nav {
     font-size: 1.7em;
@@ -286,6 +289,7 @@ publisher {
     margin-left: 0;
     padding-top: 0;
     width: 100%;
+    border: none;
   }
 }
 @media (max-width: 480px) {

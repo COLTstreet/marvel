@@ -9,15 +9,16 @@
         <li>
           <a href="/#!/home">Home</a>
         </li>
-        <li>
+        <!-- <li>
             <a href="/#!/about">About</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>
 </header>
 
 <section class="content">
+  <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
   <div class="search-top left-right">
     <div>
       <h1 style="text-align: center;">Search for a Comic Character!</h1>
@@ -36,7 +37,6 @@
       </div>
     </div>
   </div>
-  <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
   <div class="result-content left-right" ng-show="selectedResult">
     <div class="stat-div">
       <div class="result-title">

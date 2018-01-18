@@ -60,7 +60,10 @@ angular.module('marvelApp')
         img.addEventListener('load', function() {
           var vibrant = new Vibrant(img);
           var swatches = vibrant.swatches();
+
           $(".current-event").css("background", "linear-gradient(to right, #E2E2E2, " + swatches.LightVibrant.getHex() + ")");
+          $(".stat-div").css("background", swatches.Muted.getHex());
+          $(".search-top").css("background", "linear-gradient(40deg," +  swatches.Vibrant.getHex() + " 20%," + swatches.DarkVibrant.getHex() + " 20%)");
         });
       }
 
