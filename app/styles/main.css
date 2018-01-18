@@ -291,6 +291,15 @@ publisher {
     width: 100%;
     border: none;
   }
+
+  .stat-div {
+    background: #009688;
+  }
+
+  .current-event {
+    background: linear-gradient(to right, #E2E2E2, #b39ddb);
+    background: -webkit-linear-gradient(to right, #E2E2E2, #b39ddb);
+  }
 }
 @media (max-width: 480px) {
   img.fl, img.fr {
