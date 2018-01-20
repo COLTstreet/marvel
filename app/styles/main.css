@@ -4,7 +4,7 @@
 
 html {
   font-size: 21px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans";
 }
 
 html, body {
@@ -197,6 +197,14 @@ publisher {
   background: url(/images/dc.png);
 }
 
+.search-title {
+  text-align: center;
+  color: black;
+  background: #fafafa;
+  border: 2px solid black;
+  font-family: "Open Sans";
+}
+
 .search-thumb:hover {
   border: 2px solid #009688;
 }
@@ -229,15 +237,15 @@ publisher {
 .current-event {
   background: radial-gradient(circle, #E2E2E2, #b39ddb);
   background: -webkit-radial-gradient(circle, #E2E2E2, #b39ddb);
-  padding: 20px;
+  padding: 40px 20px;
   position: relative;
-  margin-top: 5px;
+  margin-top: 20px;
   border: solid 2px #000;
   box-shadow: 0 6px 6px -6px #000;
 }
 
 .current-event img {
-  box-shadow: 6px 7px 18px 0px #888888;
+  border: 2px solid #000;
 }
 
 .current-event h2 {
@@ -251,6 +259,13 @@ publisher {
   transform: skew(-15deg);
 }
 
+.bottom-right {
+  right: -1px;
+  position: absolute;
+  bottom: -2px;
+  transform: skew(-15deg);
+}
+
 .text {
   background-color: #fff;
   border: solid 2px #000;
@@ -258,7 +273,7 @@ publisher {
   padding: 3px 10px;
   font-weight: bold;
   font-size: 16px;
-  font-family: 'Comic Sans', cursive;
+  font-family: 'Open Sans', cursive;
 }
 
 .result-content {

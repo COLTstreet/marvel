@@ -18,10 +18,9 @@
 </header>
 
 <section class="content">
-  <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
   <div class="search-top left-right">
     <div>
-      <h1 style="text-align: center;">Search for a Comic Character!</h1>
+      <h1  class="search-title">Search for a Comic Character!</h1>
       <div>
           <form ng-submit="characterSearch(searchString)">
               <!-- <input type="submit" class="btn btn-dark btn-large btn-default btn-block search-btn"> -->
@@ -30,6 +29,7 @@
           </form>
       </div>
     </div>
+    <md-progress-linear ng-if="searching" md-mode="indeterminate"></md-progress-linear>
     <div class="search-results">
       <div ng-repeat="result in searchResults">
         <div ng-click="selectHero(result)">
@@ -62,6 +62,7 @@
     <div class="current-event">
       <p class="text top-left">Meanwhile...</p>
       <div id="current-event"></div>
+      <p class="text bottom-right">THE END</p>
     </div>
   </div>
   <div class="footer">

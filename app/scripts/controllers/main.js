@@ -60,8 +60,8 @@ angular.module('marvelApp')
         img.addEventListener('load', function() {
           var vibrant = new Vibrant(img);
           var swatches = vibrant.swatches();
-          // radial-gradient(circle, #4c8cbc, #1a3c45)
-          $(".current-event").css("background", "linear-gradient(to right, #E2E2E2, " + swatches.LightVibrant.getHex() + ")");
+          
+          $(".current-event").css("background", "radial-gradient(circle, #E2E2E2, " + swatches.LightVibrant.getHex() + ")");
           $(".stat-div").css("background", "radial-gradient(circle, #FFF," + swatches.Muted.getHex() + ")");
           $(".search-top").css("background", "radial-gradient(circle," +  swatches.Vibrant.getHex() + "," + swatches.DarkVibrant.getHex() + ")");
         });
