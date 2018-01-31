@@ -37,8 +37,9 @@ angular.module('marvelApp')
           .done(function (data) {
               if(data.results.length > 0){
                 $scope.searchResults = data.results;
+                $scope.showNoResults = false;
               } else {
-                console.log("No Results");
+                $scope.showNoResults = true;
               }
 
               $scope.searching = false;
@@ -67,8 +68,13 @@ angular.module('marvelApp')
         });
       }
 
+      function replaceAll(str, find, replace) {
+          return str.replace(new RegExp(find, 'g'), replace);
+      }
+
       function selectHero(result){
         $scope.selectedResult = result;
+        $scope.selectedResult.description = replaceAll($scope.selectedResult.description, "data-srcset", "srcset");
         console.log($scope.selectedResult);
         var background = "url(" +  result.image.super_url + ")";
         $('.hero').css('background-image', background);

@@ -9,9 +9,9 @@
         <li>
           <a href="/#!/home">Home</a>
         </li>
-        <!-- <li>
+        <li>
             <a href="/#!/about">About</a>
-        </li> -->
+        </li>
       </ul>
     </nav>
   </div>
@@ -35,6 +35,15 @@
         <div ng-click="selectHero(result)">
           <img class="search-thumb hvr-float" title="{{result.name}}" data-toggle="tooltip" ng-src="{{result.image.icon_url}}"></div>
       </div>
+    </div>
+  </div>
+  <div ng-show="showNoResults" layout="column">
+    <div class="no-results">
+      <p>Oops! We couldn't find any characters based on your search of "{{searchString}}"</p>
+      <p>Make sure your search is spelled correctly or perhaps try an alias!</p>
+    </div>
+    <div>
+      <img class="btm-image" src="/images/batman.jpg" alt="batman">
     </div>
   </div>
   <div class="result-content left-right" ng-show="selectedResult">
